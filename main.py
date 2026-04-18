@@ -3,5 +3,10 @@ import webbrowser
 import pyttsx3
 
 recognizer=sr.Recognizer()
-ttsx= pyttsx3.init()
+engine= pyttsx3.init()
+
+def say(text):
+    
+
+
 if __name__=="__main__":
