@@ -10,4 +10,4 @@ def speak(text):
 
 
 if __name__=="__main__":
-    speak("Hello! How are yo doing? How may I help you?")
+    speak("Hello! How are you doing? How may I help you?")
