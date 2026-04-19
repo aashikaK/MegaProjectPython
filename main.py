@@ -2,6 +2,7 @@ import speech_recognition as sr
 import webbrowser
 import pyttsx3
 import subprocess
+import musicLibrary
 # pip install pocketsphinx
  
 
@@ -25,14 +26,17 @@ def processCommand(c):
     if "open google" in c.lower():
         webbrowser.open("https://google.com")
 
-    if "open facebook" in c.lower():
+    elif "open facebook" in c.lower():
         webbrowser.open("https://www.facebook.com")
 
-    if "open youtube" in c.lower():
+    elif "open youtube" in c.lower():
         webbrowser.open("https://www.youtube.com")
 
-    if "open instagram" in c.lower():
+    elif "open instagram" in c.lower():
         webbrowser.open("https://www.instagram.com")
+    
+    else:
+        print("Command:", c)
 
 if __name__=="__main__":
     speak("Hello!How may I help you?")
