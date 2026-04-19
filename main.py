@@ -20,13 +20,11 @@ if __name__=="__main__":
         r=sr.Recognizer()
         with sr.Microphone() as source:
             print('Listening....')
-            audio=r.listen(source)
-
+            audio=r.listen(source,timeout=2)
+        print('Recognizing....')
         # recognize sppech using sphinx
         try:
-            command=r.recognize_sphinx(audio)
+            command=r.recognize_google(audio)
             print(command)
-        except sr.UnknownValueError:
-            print("Sphinx didn't catch that")
-        except sr.RequestError as e:
-            print(e)
+        except Exception as e:
+            print("Didn't catch that.Error-> ",e)
