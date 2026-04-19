@@ -16,7 +16,8 @@ if __name__=="__main__":
         # Listening for wake word 'juice'
         # obtain audio from the microphone
         r=sr.Recognizer()
-        with sr.Microphone()
+        with sr.Microphone() as source:
+            print('Listening....')
 
         # recognize sppech using sphinx
         try:
