@@ -35,7 +35,7 @@ def processCommand(c):
     elif "open instagram" in c.lower():
         webbrowser.open("https://www.instagram.com")
     
-    elif c.lower().startsWith("play"):
+    elif c.lower().startswith("play"):
         song = c.lower().split(" ")[1]
         link=musicLibrary.music[song]
         webbrowser.open(link)
