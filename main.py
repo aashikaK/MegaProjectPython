@@ -43,7 +43,6 @@ if __name__=="__main__":
                     print('Active......')
                     audio=r.listen(source)
                     command= r.recognize_google(audio)
-                    print("Command:", command)
 
                 processCommand(command)
                 
