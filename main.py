@@ -20,8 +20,19 @@ def speak(text):
     # )
 
 def processCommand(c):
-    print("Command:", c)
-    input("Press Enter to continue...")
+    # print("Command:", c)
+    # input("Press Enter to continue...")
+    if "open google" in c.lower():
+        webbrowser.open("https://google.com")
+
+    if "open facebook" in c.lower():
+        webbrowser.open("https://www.facebook.com")
+
+    if "open youtube" in c.lower():
+        webbrowser.open("https://www.youtube.com")
+
+    if "open instagram" in c.lower():
+        webbrowser.open("https://www.instagram.com")
 
 if __name__=="__main__":
     speak("Hello!How may I help you?")
