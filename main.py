@@ -25,4 +25,8 @@ if __name__=="__main__":
         # recognize sppech using sphinx
         try:
             command=r.recognize_sphinx(audio)
-
+            print(command)
+        except sr.UnknownValueError:
+            print("Sphinx didn't catch that")
+        except sr.RequestError as e:
+            print(e)
