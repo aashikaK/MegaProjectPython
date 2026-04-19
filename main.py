@@ -15,9 +15,9 @@ def processCommand(c):
     pass
 
 if __name__=="__main__":
-    speak("Hello! How are you doing? How may I help you?")
+    speak("Hello!How may I help you?")
     while True:
-        # Listening for wake word 'juice'
+        # Listening for wake word 'fan'
         # obtain audio from the microphone
         r=sr.Recognizer()
         
@@ -26,16 +26,16 @@ if __name__=="__main__":
             with sr.Microphone() as source:
                 print('Listening....')
                 audio=r.listen(source,timeout=2,phrase_time_limit=2)
-            print('Recognizing....')
+            
             word=r.recognize_google(audio)
-            if(word.lower()=="juice"):
+            if(word.lower()=="fan"):
                 speak("Ya")
                 with sr.Microphone() as source:
                     print('Active......')
                     audio=r.listen(source)
                     command=r.recognize_google(audio)
 
-                    processCommand()
+                    processCommand(command)
                 # listen for command
             # print(command)
         except Exception as e:
