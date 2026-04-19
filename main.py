@@ -20,7 +20,7 @@ if __name__=="__main__":
         r=sr.Recognizer()
         with sr.Microphone() as source:
             print('Listening....')
-            audio=r.listen(source,timeout=2)
+            audio=r.listen(source,timeout=2,phrase_time_limit=2)
         print('Recognizing....')
         # recognize sppech using sphinx
         try:
