@@ -1,6 +1,8 @@
 import speech_recognition as sr
 import webbrowser
 import pyttsx3
+# pip install pocketsphinx
+ 
 
 recognizer=sr.Recognizer()
 engine= pyttsx3.init()
@@ -18,7 +20,9 @@ if __name__=="__main__":
         r=sr.Recognizer()
         with sr.Microphone() as source:
             print('Listening....')
+            audio=r.listen(source)
 
         # recognize sppech using sphinx
         try:
-            print
+            command=r.recognize_sphinx(audio)
+
