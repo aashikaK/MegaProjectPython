@@ -11,6 +11,8 @@ def speak(text):
     engine.say(text)
     engine.runAndWait()
 
+def processCommand(c):
+    pass
 
 if __name__=="__main__":
     speak("Hello! How are you doing? How may I help you?")
@@ -25,9 +27,15 @@ if __name__=="__main__":
                 print('Listening....')
                 audio=r.listen(source,timeout=2,phrase_time_limit=2)
             print('Recognizing....')
-            command=r.recognize_google(audio)
-            if(command.lower()=="juice"):
+            word=r.recognize_google(audio)
+            if(word.lower()=="juice"):
                 speak("Ya")
+                with sr.Microphone() as source:
+                    print('Active......')
+                    audio=r.listen(source)
+                    command=r.recognize_google(audio)
+
+                    processCommand()
                 # listen for command
             # print(command)
         except Exception as e:
