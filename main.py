@@ -6,7 +6,7 @@ import musicLibrary
 # pip install pocketsphinx
  
 
-recognizer=sr.Recognizer()
+r=sr.Recognizer()
 engine= pyttsx3.init()
 
 def speak(text):
@@ -46,7 +46,7 @@ if __name__=="__main__":
     while True:
         # Listening for wake word 'fan'
         # obtain audio from the microphone
-        r=sr.Recognizer()
+        
         # recognize speech using sphinx
         try:
             with sr.Microphone() as source:
