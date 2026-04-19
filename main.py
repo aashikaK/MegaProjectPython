@@ -21,7 +21,7 @@ if __name__=="__main__":
         # obtain audio from the microphone
         r=sr.Recognizer()
         
-        # recognize sppech using sphinx
+        # recognize speech using sphinx
         try:
             with sr.Microphone() as source:
                 print('Listening....')
@@ -33,10 +33,9 @@ if __name__=="__main__":
                 with sr.Microphone() as source:
                     print('Active......')
                     audio=r.listen(source)
-                    command=r.recognize_google(audio)
+                    command= r.recognize_google(audio)
 
-                    processCommand(command)
-                # listen for command
-            # print(command)
+                    processCommand()
+                
         except Exception as e:
             print("Didn't catch that.Error-> ",e)
