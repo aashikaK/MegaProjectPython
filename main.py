@@ -3,11 +3,13 @@ import webbrowser
 import pyttsx3
 import subprocess
 import musicLibrary
+import requests
 # pip install pocketsphinx
  
 
 r=sr.Recognizer()
 engine= pyttsx3.init()
+newsapi="7b97d76ee0d04f958c8734a32a398532"
 
 def speak(text):
     engine.say(text)
@@ -40,7 +42,12 @@ def processCommand(c):
         link=musicLibrary.music[song]
         webbrowser.open(link)
     elif "news" in c.lower():
-        
+        r= requests.get("https://newsapi.org/v2/top-headlines?country=us&apiKey=7b97d76ee0d04f958c8734a32a398532")
+        data = r.json()
+
+        for article in data["articles"][:5]:   # top 5 headlines
+            print(article["title"])
+            speak(article["title"]) 
 
 
 if __name__=="__main__":
