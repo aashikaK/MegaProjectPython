@@ -5,5 +5,5 @@ music={
     "faasle":'https://youtu.be/EiiOYwqk3A0?si=iyuCvUHuZda3vHma',
     'baby':'https://youtu.be/kffacxfA7G4?si=UH8wPnmCvwKi_70r',
     'yummy':'https://youtu.be/8EJ3zbKTWQ8?si=PVuD8n6_PrOtJ5BV',
-    'paaro' :'https://youtu.be/DxsDekHDKXo?si=id_szlbbttLFf4Uj'
+    'paro' :'https://youtu.be/DxsDekHDKXo?si=id_szlbbttLFf4Uj'
 }

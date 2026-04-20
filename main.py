@@ -39,12 +39,15 @@ def processCommand(c):
         song = c.lower().split(" ")[1]
         link=musicLibrary.music[song]
         webbrowser.open(link)
+    elif "news" in c.lower():
+        
+
 
 if __name__=="__main__":
     speak("Hello!How may I help you?")
     
     while True:
-        # Listening for wake word 'fan'
+        # Listening for wake word 'moon'
         # obtain audio from the microphone
         
         # recognize speech using sphinx
@@ -54,8 +57,8 @@ if __name__=="__main__":
                 audio=r.listen(source,timeout=2,phrase_time_limit=2)
             
             word=r.recognize_google(audio)
-            if "fan" in word.lower():
-                speak("Ya")
+            if "moon" in word.lower():
+                speak("yeah")
                 with sr.Microphone() as source:
                     print('Active......')
                     audio=r.listen(source)
