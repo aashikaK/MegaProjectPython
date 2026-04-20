@@ -4,6 +4,7 @@ import pyttsx3
 import subprocess
 import musicLibrary
 import requests
+
 # pip install pocketsphinx
  
 
@@ -14,7 +15,7 @@ newsapi="7b97d76ee0d04f958c8734a32a398532"
 def speak(text):
     engine.say(text)
     engine.runAndWait()
-    engine.stop()
+    # engine.stop()
     # subprocess.run(
     #     ["powershell", "-Command", f'Add-Type -AssemblyName System.Speech; '
     #      f'$s = New-Object System.Speech.Synthesis.SpeechSynthesizer; '
@@ -41,13 +42,17 @@ def processCommand(c):
         song = c.lower().split(" ")[1]
         link=musicLibrary.music[song]
         webbrowser.open(link)
-    elif "news" in c.lower():
-        r= requests.get("https://newsapi.org/v2/top-headlines?country=us&apiKey=7b97d76ee0d04f958c8734a32a398532")
-        data = r.json()
 
-        for article in data["articles"][:5]:   # top 5 headlines
-            print(article["title"])
-            speak(article["title"]) 
+    elif "news" in c.lower():
+        r= requests.get(f"https://newsapi.org/v2/top-headlines?country=np&apiKey={newsapi}")
+        if r.status_code==200:
+            data = r.json()
+
+            for article in data["articles"][:5]:   # top 5 headlines
+                print(article["title"])
+                speak(article["title"]) 
+    else:
+        # let openAi handle the requests
 
 
 if __name__=="__main__":
